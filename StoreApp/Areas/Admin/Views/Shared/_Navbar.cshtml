@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarNav">
+      <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">
+          <a class="nav-link text-white " aria-current="page" asp-controller="Dashboard" asp-action="Index" >Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" asp-controller="Product" asp-action="Index" >Products (@await Component.InvokeAsync("ProductSummary"))</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" asp-controller="Category" asp-action="Index" >Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" asp-controller="Order" asp-action="Index" >Orders</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+
+      </ul>
+    </div>
+  </div>
+</nav>

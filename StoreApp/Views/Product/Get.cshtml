@@ -1,0 +1,36 @@
+@model Product
+
+<div class="text-center">
+    <h3 class="display-2">@Model.Name</h3>
+</div>
+
+<div class="col-md-12 text-center my-3">
+    <img src="@Model.ImagePath" alt="@Model.Name" class="img-fluid rounded shadow" style="width: 300px;">
+</div>
+
+<div class="text-center my-3">
+    <h6 class="display-6">@Model.Price.ToString("c")</h6>
+</div>
+
+<div class="col md-12 text-center my-3">
+    <p>@Model.Summary</p>
+</div>
+
+<div class="text-center my-3">
+    <div class="btn-group ">
+        <a class="btn btn-outline-primary rounded-2" asp-controller="Home" asp-action="Index">
+            <i class="fa-solid fa-house"></i>
+            Home</a>
+        <form asp-page="/cart" method="post">
+            <input type="hidden" asp-for="@Model.Id">
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathandQuery()">
+            <button type="submit" class="btn btn-outline-warning mx-2 rounded-2">
+                <i class="fa fa-cart-plus"></i>
+                Add to cart
+            </button>
+        </form>
+        <a class="btn btn-outline-primary rounded-2" asp-controller="Product" asp-action="Index">
+            <i class="fa-solid fa-list"></i>
+            Products</a>
+    </div>
+</div>
